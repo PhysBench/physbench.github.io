@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a2f5648-4ac7-452d-bf45-7b80c653380f" name="Changes" comment="">
+    <list default="true" id="326ca343-de87-44c3-bf9c-234ae339f7e5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PhysBench.github.io.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/statistics.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,16 +20,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2mPzO1JDE4sx2WimwICAL6IsfnY" />
+  <component name="ProjectId" id="2mQZrYFPoGEyI9yYVT1gevZvBSn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
     "node.js.detected.package.eslint": "true",
@@ -37,12 +40,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5a2f5648-4ac7-452d-bf45-7b80c653380f" name="Changes" comment="" />
-      <created>1726992964053</created>
+      <changelist id="326ca343-de87-44c3-bf9c-234ae339f7e5" name="Changes" comment="" />
+      <created>1727010962736</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1726992964053</updated>
-      <workItem from="1726992965412" duration="7276000" />
+      <updated>1727010962736</updated>
+      <workItem from="1727010964533" duration="2957000" />
     </task>
     <servers />
   </component>
