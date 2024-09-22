@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Evaluating mathematical reasoning of foundation models in visual contexts">
+  <meta name="keywords" content="MathVista, Math Vista">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> PhysBench</title>
+
+  <link rel="icon" href="./static/images/GVL.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+
+  <!--  Table-->
+  <script src="./static/js/leaderboard_physbench_test.js"></script>
+  <!--  Table data-->
+  <script src="./data/physbench_test/model_scores.js" defer></script>
+  <script src="./data/physbench_test/model_scores_nonv.js" defer></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <img src="static/images/physbench.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista" style="vertical-align: middle">PhysBench</span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle">
+            Benchmarking and Enhancing VLMs for <br> Physical World Understanding
+          </h2>
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">Anonymous</span> -->
+
+           <span class="author-block">
+            <a href="None">Wei Chow</a><sup style="color:#6fbf73;">1</sup><sup>*</sup>,</span>
+           <span class="author-block">
+             <a href="https://pointscoder.github.io/">Jiageng Mao</a><sup style="color:#6fbf73;">1</sup><sup>*</sup>,</span>
+           <span class="author-block">
+             <a href="https://sites.google.com/site/boyilics/home">Boyi Li</a><sup style="color:#ed4b82;">2</sup><sup>,</sup><sup style="color:#ffac33;">3</sup>,
+           </span>
+           <span class="author-block">
+             <a href="https://danielseita.github.io/">Daniel Seita</a><sup style="color:#6fbf73">1</sup>,
+           </span>
+           <span class="author-block">
+             <a href="https://scholar.google.com.br/citations?user=ow3r9ogAAAAJ&hl=en">Vitor Guizilini</a><sup style="color:#ac33ff">4</sup>,
+           </span> 
+           <span class="author-block">
+             <a href="https://yuewang.xyz/">Yue Wang</a><sup style="color:#6fbf73">1</sup>
+           </span>
+          </div>
+
+         <div class="is-size-5 publication-authors">
+           <span class="author-block"><sup style="color:#6fbf73;">1</sup>University of Southern California,</span>
+           <span class="author-block"><sup style="color:#ed4b82">2</sup>NVIDIA,</span><br>
+           <span class="author-block"><sup style="color:#ffac33">3</sup>UC Berkeley,</span
+           <span class="author-block"><sup style="color:#ac33ff">4</sup>Toyota Research Institute</span><br>
+           <span class="author-block"><sup>*</sup>Equal Contribution</span><br>
+           <!-- <span class="paper-block"><b style="color:#f41c1c">under review for ICLR 2025</b> </span> -->
+        </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2310.02255"
+                   class="external-link button is-normal is-rounded is-dark">
+                <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
+                   class="external-link button is-normal is-rounded is-dark"> -->
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/USC-GVL/PhysBench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/AI4Math/MathVista"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="https://physbench.github.io/#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+              <!-- Eval.AI Link -->
+              <span class="link-block">
+                <a href="https://eval.ai/" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:18px">🔺</p>
+                      <!-- <img src="https://eval.ai/dist/images/evalai-logo-single.png" alt="EvalAI Logo" style="height: 18px;"> -->
+                  </span>
+                  <span>Eval.AI</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-top: -150px; margin-bottom: -100px;">
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/tease_scores.png" alt="geometric reasoning" width="84%"/>
+              <p> Accuracy scores of one leading LLM (i.e., PoT GPT-4), four primary LMMs, random chance, and human performance our proposed 
+              <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">PhysBench</span>
+              across mathematical reasoning and visual context types. PoT refers to program-of-thought prompting, and PoT GPT-4 is a textual LLM augmented with the caption and OCR text. GPT-4V is manually evaluated via the playground chatbot. <b class="best-score-text" style="color: #C6011F"> The scores of Gemini Ultra are from the Gemini Team, Google.</b>
+              </p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/tease_scores.png" alt="geometric reasoning" width="84%"/>
+              <p> Accuracy scores of one leading LLM (i.e., PoT GPT-4), four primary LMMs, random chance, and human performance our proposed 
+              <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">PhysBench</span>
+              across mathematical reasoning and visual context types. PoT refers to program-of-thought prompting, and PoT GPT-4 is a textual LLM augmented with the caption and OCR text. GPT-4V is manually evaluated via the playground chatbot.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Vision-Language Models (VLMs)</b> have emerged as promising tools for building embodied agents, whereas their lack of physical world understanding hampers their effectiveness in real-world applications. To address this challenge, we present <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">PhysBench</span>, a comprehensive benchmark designed to evaluate and enhance VLMs' understanding of the physical world across diverse and complex tasks.
+          </p>
+          <p>
+            PhysBench comprises <b>100,000 entries</b> of interleaved video-image-text data, and the data is categorized into four major classes: <b>physical object properties</b>, <b>physical object relationships</b>, <b>physical scene understanding</b>, and <b>physics-driven dynamics</b>, covering <b>19 subclasses</b> and <b>10 distinct capability dimensions</b>.
+          </p>
+          <p>
+            Our extensive experiments on <b>39 representative VLMs</b> reveal significant gaps in physical world understanding and provide insights into current models' limitations. To improve VLMs' physical understanding, we propose an agent-based method called <b>PhysAgent</b>, which leverages prior physical knowledge and expert model assistance to enhance physical world understanding capabilities.
+          </p>
+          <p>
+            Furthermore, we demonstrate that improving VLMs’ understanding of the physical world can significantly facilitate the deployment of embodied agents in real-world scenarios, moving towards bridging the gap between human and machine intelligence in comprehending the physical world.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<section class="section">
+  <div class="container">
+    
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3" id="leaderboard">Leaderboard on PhysBench</h2>
+        <div class="content">
+          <p class="mt-3">Accuracy scores for <strong>General VLM</strong> on the <b>test</b> subset (10,002 entries) of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">PhysBench</span>.
+          </p>
+          <div id="physbench_test"></div>
+        </div>
+
+        <div class="content">
+          <p class="mt-3">Accuracy scores for <strong>Image VLM</strong> and <strong>Video VLM</strong> on the <b>test</b> subset without interleaved data entries (8,099 entries) of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">PhysBench</span>.
+          </p>
+          <div id="physbench_test_nonv"></div>
+        </div>
+
+        <div class="content">
+          <br>
+          <b>Method types:</b> <b>Seq ⏩:</b> Sequential input of images after frame selection from videos,, <b>Merge 🖼️:</b> merging
+video frames into a single image
+          <br>
+          <br>
+          <div>
+          <p>🚨 To submit your results to the leaderboard, please send to <a href="mailto:zhouwei_haining@outlook.com">this email</a> with your result json files.</p>
+          <p>🚨 For more submission details, please refer to <a href="https://github.com/lupantech/MathVista?tab=readme-ov-file#-leaderboard-">this link</a> and <a href="https://github.com/lupantech/MathVista?tab=readme-ov-file#-evaluations-on-mathvista">this link</a>.
+          </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista">
+    <img src="static/images/physbench.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="mathvista" style="vertical-align: middle">PhysBench Dataset</span>
+  </h1>
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p> -->
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">PhysBench</span> is a consolidated Mathematical reasoning benchmark within
+            Visual contexts. It consists of <b>three newly created datasets, IQTest, FunctionQA, and PaperQA</b>, which address the missing visual domains and are tailored to evaluate logical reasoning on puzzle test figures,
+            algebraic reasoning over functional plots, and scientific reasoning with academic paper figures, respectively. It also incorporates <b>9 MathQA datasets</b>
+            and <b>19 VQA datasets</b> from the literature, which significantly enrich the diversity and complexity of
+            visual perception and mathematical reasoning challenges within our benchmark. 
+            In total, <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">PhysBench</span> includes <b>6,141 examples</b> collected from <b>31 different datasets</b>.
+            <!-- a compilation of data 1) carefully examined and filtered from 28 existing VQA and MathQA datasets and 2) manually collected by us. In total, 6,141 examples were collected from 31 different datasets. -->
+          </p>
+
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/our_new_3_datasets.png" alt="algebraic reasoning" width="80%"/>
+                <p> Examples of our newly annotated datasets: IQTest, FunctionQA, and PaperQA.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/source_dataset.png" alt="arithmetic reasoning" width="50%"/>
+                <p> Summary of the 31 different source datasets in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                  <span class="mathvista">PhysBench</span>.
+              </div>
+            </div>
+          </div>
+
+          <p>
+            All the data examples were divided into two subsets: testmini and test. 
+            <!-- @PAN TODO: add download links -->
+            <ul>
+              <li><b>testmini</b>: 1,000 examples used for model development, validation, or for those with limited computing resources.</li>
+              <li><b>test</b>: 5,141 examples for standard evaluation. Notably,
+                the answer labels for test will NOT be publicly released.</li>
+            </ul>
+            You can download the dataset on <a href="https://huggingface.co/datasets/AI4Math/MathVista" target="_blank">Hugging Face Dataset</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column" style="margin-right: -20rem;">
+        <div class="content has-text-centered">
+          <img src="static/images/statistics.png" alt="data-overview" style="max-width: 50%;"/>
+          <p> 
+            Key statistics of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">PhysBench</span>.<br/>
+          </p> 
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <img src="static/images/data-composition.png" alt="data-composition" style="max-width: 56%;"/>
+          <p>
+              Source dataset distribution of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">PhysBench</span>.<br/>
+              <b>FQA</b>: figure question answering,
+              <b>GPS</b>: geometry problem solving,<br/>
+              <b>MWP</b>: math word problem,
+              <b>TQA</b>: textbook question answering,<br/>
+              <b>VQA</b>: visual question answering.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Examples</h2>
+        <p>One example for each <b>mathematical reasoning</b> skill required in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+          <span class="mathvista">PhysBench</span></p>
+
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/examples/ari.png" alt="arithmetic reasoning" width="60%"/>
+              <p>Arithmetic Reasoning</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/examples/alg.png" alt="algebraic reasoning" width="60%"/>
+              <p>Algebraic Reasoning</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/examples/geo.png" alt="geometric reasoning" width="60%"/>
+              <p>Geometric Reasoning</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/examples/log.png" alt="logical reasoning" width="60%"/>
+              <p>Logical Reasoning</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/examples/num.png" alt="numeric reasoning" width="60%"/>
+              <p>Numeric Reasoning</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/examples/sta.png" alt="statistical reasoning" width="60%"/>
+              <p>Statistical Reasoning</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/examples/sci.png" alt="scientific reasoning" width="60%"/>
+              <p>Scientific Reasoning</p>
+            </div>
+          </div>
+
+          
+        </div>
+
+        <br><br>
+        <p>Statics in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+          <span class="mathvista">PhysBench</span></p>
+      </div>
+    </div>
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Statistics</h2>
+        <p>Notable statistics of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+          <span class="mathvista">PhysBench</span></p>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/context-dist.png" alt="context" class="stats-image">
+              <p>Distribution of visual context types within <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span></p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/category.png" alt="category" class="stats-image"/>
+              <p>Category distribution of problems within <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span></p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/grade-levels.png" alt="grade" class="stats-image"/>
+              <p>Distribution of questions across different grade levels within <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span></p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/qs-len.png" alt="qs-len" class="stats-image"/>
+              <p>Distribution of the number of words per question in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span>. 
+                <!-- Questions with a length greater than 60 are categorized as 61 for visualization simplicity -->
+              </p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/reasoning.png" alt="reasoning" class="stats-image"/>
+              <p>Portion of each mathematical reasoning type involved in the problems of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span></p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/reasoning-count.png" alt="reasoning-count" class="stats-image"/>
+              <p>Distribution of the number of mathematical reasoning types within <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span></p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/task-type.png" alt="task-type" class="stats-image"/>
+              <p>Task type distribution of problems within <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista">Experiment Results</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Results on Existing Foundation Models</h2>
+        <!-- <p>One example for each reasoning skill required in <span class="mathvista">PhysBench</span></p> -->
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-figures/score_leaderboard_gpt4v.png" alt="grade-lv" width="60%"/>
+              <p>Accuracy scores of primary baselines on the testmini subset (1,000 examples) of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span>. 
+                <br>
+                Both CoT GPT-4 and PoT GPT-4 are augmented with Bard captions and OCR text.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-figures/bard_error.png" alt="grade-lv" width="70%"/>
+              <p>
+                Error analysis of Bard results: (a) presents errors in answers and explanations; <br>
+                (b) delves into the details of wrong explanations. <br>
+                Notations: “Answer” is “Ans.”, “Explanation” is “Exp.”, “Partially Correct” is “Partial”, <br>
+                and “Not applicable” refers to unanswerable or indeterminate cases.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-figures/grade-lv.png" alt="grade-lv" width="90%"/>
+              <p>Average accuracy scores across different grade levels for leading foundation models</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-figures/contexts.png" alt="contexts" width="90%"/>
+              <p>Accuracy scores of leading baselines across various visual contexts</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-figures/ablation.png" alt="geometric reasoning" width="90%"/>
+              <p>Average accuracy scores of LLM baselines under various visual inputs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Visualization Examples</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/5.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/6.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/37.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/38.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/39.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/40.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/41.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/42.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/43.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/44.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/45.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/46.png" alt="" width="50%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/47.png" alt="" width="60%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/48.png" alt="" width="40%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/49.png" alt="" width="40%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/50.png" alt="" width="40%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/51.png" alt="" width="40%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/52.png" alt="" width="40%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/53.png" alt="" width="40%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/54.png" alt="" width="40%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/55.png" alt="" width="55%"/>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/results-examples/56.png" alt="" width="50%"/>
+            </div>
+          </div>   
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@inproceedings{lu2024mathvista,
+  author    = {Lu, Pan and Bansal, Hritik and Xia, Tony and Liu, Jiacheng and Li, Chunyuan and Hajishirzi, Hannaneh and Cheng, Hao and Chang, Kai-Wei and Galley, Michel and Gao, Jianfeng},
+  title     = {MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+</footer>
+
+</body>
+</html>

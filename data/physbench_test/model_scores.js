@@ -1,0 +1,211 @@
+physbench_test_score_table = {
+  "-": {
+    "Model": "Human Performance",
+    "Method": "-",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 95.87,
+    "object": 97.10,
+    "spatial": 95.67,
+    "environment": 94.91,
+    "phenomena": 95.68
+  },
+  "1": {
+    "Model": "GPT-4o \ud83e\udd47",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 49.49,
+    "object": 56.91,
+    "spatial": 64.80,
+    "environment": 30.15,
+    "phenomena": 46.99
+  },
+  "2": {
+    "Model": "Gemini-1.5-pro \ud83e\udd48",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 49.11,
+    "object": 57.26,
+    "spatial": 63.61,
+    "environment": 36.52,
+    "phenomena": 41.56
+  },
+  "3": {
+    "Model": "Gemini-1.5-flash \ud83e\udd49",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 46.07,
+    "object": 57.41,
+    "spatial": 52.24,
+    "environment": 34.32,
+    "phenomena": 40.93
+  },
+  "4": {
+    "Model": "GPT-4o-mini",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 43.15,
+    "object": 53.54,
+    "spatial": 44.24,
+    "environment": 30.59,
+    "phenomena": 42.90
+  },
+  "5": {
+    "Model": "GPT-4V",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 41.26,
+    "object": 49.59,
+    "spatial": 45.77,
+    "environment": 26.34,
+    "phenomena": 42.15
+  },
+  "6": {
+    "Model": "LLaVA-interleave",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 41.00,
+    "object": 47.23,
+    "spatial": 44.62,
+    "environment": 35.64,
+    "phenomena": 37.21
+  },
+  "7": {
+    "Model": "LLaVA-interleave-dpo",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 40.83,
+    "object": 47.97,
+    "spatial": 42.67,
+    "environment": 33.73,
+    "phenomena": 38.78
+  },
+  "8": {
+    "Model": "Phi-3V",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 38.42,
+    "object": 43.67,
+    "spatial": 37.92,
+    "environment": 34.93,
+    "phenomena": 36.92
+  },
+  "9": {
+    "Model": "Mantis-siglip-llama3",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 37.64,
+    "object": 42.47,
+    "spatial": 32.78,
+    "environment": 36.83,
+    "phenomena": 37.51
+  },
+  "10": {
+    "Model": "LLaVA-NV-dpo",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 37.43,
+    "object": 38.83,
+    "spatial": 44.31,
+    "environment": 33.86,
+    "phenomena": 37.21
+  },
+  "11": {
+    "Model": "Mantis-Idefics2",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 37.39,
+    "object": 41.97,
+    "spatial": 41.44,
+    "environment": 29.53,
+    "phenomena": 36.56
+  },
+  "12": {
+    "Model": "VILA-1.5-13B",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 37.15,
+    "object": 40.53,
+    "spatial": 40.15,
+    "environment": 31.96,
+    "phenomena": 36.07
+  },
+  "13": {
+    "Model": "Mantis-clip-llama3",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 36.92,
+    "object": 40.61,
+    "spatial": 35.11,
+    "environment": 32.45,
+    "phenomena": 38.36
+  },
+  "14": {
+    "Model": "Mantis-LLaVA",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 36.69,
+    "object": 44.48,
+    "spatial": 30.45,
+    "environment": 36.25,
+    "phenomena": 34.73
+  },
+  "15": {
+    "Model": "LLaVA-NV",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 35.42,
+    "object": 38.33,
+    "spatial": 30.83,
+    "environment": 34.00,
+    "phenomena": 37.17
+  },
+  "16": {
+    "Model": "VILA-1.5-3B",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 34.11,
+    "object": 32.40,
+    "spatial": 33.02,
+    "environment": 34.84,
+    "phenomena": 35.78
+  },
+  "17": {
+    "Model": "VILA-1.5-3B-s2",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 33.07,
+    "object": 33.14,
+    "spatial": 30.26,
+    "environment": 35.72,
+    "phenomena": 33.00
+  },
+  "18": {
+    "Model": "VILA-1.5-8B",
+    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Source": "<my_paper_link>",
+    "Date": "2024-08-15",
+    "ALL": 32.85,
+    "object": 33.41,
+    "spatial": 29.88,
+    "environment": 30.85,
+    "phenomena": 35.91
+  }
+}
