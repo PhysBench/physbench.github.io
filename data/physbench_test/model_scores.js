@@ -12,7 +12,7 @@ physbench_test_score_table = {
   },
   "1": {
     "Model": "GPT-4o \ud83e\udd47",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 49.49,
@@ -23,7 +23,7 @@ physbench_test_score_table = {
   },
   "2": {
     "Model": "Gemini-1.5-pro \ud83e\udd48",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 49.11,
@@ -34,7 +34,7 @@ physbench_test_score_table = {
   },
   "3": {
     "Model": "Gemini-1.5-flash \ud83e\udd49",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 46.07,
@@ -45,7 +45,7 @@ physbench_test_score_table = {
   },
   "4": {
     "Model": "GPT-4o-mini",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 43.15,
@@ -56,7 +56,7 @@ physbench_test_score_table = {
   },
   "5": {
     "Model": "GPT-4V",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 41.26,
@@ -67,7 +67,7 @@ physbench_test_score_table = {
   },
   "6": {
     "Model": "LLaVA-interleave",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 41.00,
@@ -78,7 +78,7 @@ physbench_test_score_table = {
   },
   "7": {
     "Model": "LLaVA-interleave-dpo",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 40.83,
@@ -89,7 +89,7 @@ physbench_test_score_table = {
   },
   "8": {
     "Model": "Phi-3V",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 38.42,
@@ -100,7 +100,7 @@ physbench_test_score_table = {
   },
   "9": {
     "Model": "Mantis-siglip-llama3",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 37.64,
@@ -111,7 +111,7 @@ physbench_test_score_table = {
   },
   "10": {
     "Model": "LLaVA-NV-dpo",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 37.43,
@@ -122,7 +122,7 @@ physbench_test_score_table = {
   },
   "11": {
     "Model": "Mantis-Idefics2",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 37.39,
@@ -133,7 +133,7 @@ physbench_test_score_table = {
   },
   "12": {
     "Model": "VILA-1.5-13B",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 37.15,
@@ -144,7 +144,7 @@ physbench_test_score_table = {
   },
   "13": {
     "Model": "Mantis-clip-llama3",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 36.92,
@@ -155,7 +155,7 @@ physbench_test_score_table = {
   },
   "14": {
     "Model": "Mantis-LLaVA",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 36.69,
@@ -166,7 +166,7 @@ physbench_test_score_table = {
   },
   "15": {
     "Model": "LLaVA-NV",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 35.42,
@@ -177,7 +177,7 @@ physbench_test_score_table = {
   },
   "16": {
     "Model": "VILA-1.5-3B",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 34.11,
@@ -188,7 +188,7 @@ physbench_test_score_table = {
   },
   "17": {
     "Model": "VILA-1.5-3B-s2",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 33.07,
@@ -199,7 +199,7 @@ physbench_test_score_table = {
   },
   "18": {
     "Model": "VILA-1.5-8B",
-    "Method": "merge \ud83d\uddbc\ufe0f",
+    "Method": "seq \u23e9",
     "Source": "<my_paper_link>",
     "Date": "2024-08-15",
     "ALL": 32.85,
