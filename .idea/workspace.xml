@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="326ca343-de87-44c3-bf9c-234ae339f7e5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/physbench_test/model_scores.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/physbench_test/model_scores.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/physbench_test/model_scores_nonv.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/physbench_test/model_scores_nonv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/our_new_3_datasets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/question1/cor.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/question1/cor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/question2/data.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/question2/data.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/teaser.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/teaser.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,9 @@
       <updated>1727010962736</updated>
       <workItem from="1727010964533" duration="2957000" />
       <workItem from="1727055291072" duration="207000" />
+      <workItem from="1727061352493" duration="10000" />
+      <workItem from="1727061378654" duration="369000" />
+      <workItem from="1727182129744" duration="3042000" />
     </task>
     <servers />
   </component>

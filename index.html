@@ -257,14 +257,6 @@ video frames into a single image
   </div>
 </section>
 
-<!-- <section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
-        <div class="content has-text-justified">
-          <p> -->
-            
 <section class="section">
   <div class="container">
     <div class="columns is-centered has-text-centered">
@@ -273,37 +265,51 @@ video frames into a single image
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-            <span class="mathvista">PhysBench</span> is a
+            We propose <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">PhysBench</span>, which comprehensively evaluates VLMs' perception of the physical world across four major task categories:
           </p>
+          <ul>
+            <li>
+              <b>(1) Physical Object Properties</b>: Assessment of physical attributes of objects such as mass, size, density, tension, friction, bending stiffness, elasticity, and plasticity.
+            </li>
+            <li>
+              <b>(2) Physical Object Relationships</b>: Evaluation of spatial relationships involving object movement, speed, and position.
+            </li>
+            <li>
+              <b>(3) Physical Scene Understanding</b>: Interpretation of environmental factors, including light sources, viewpoints, temperature, and so on.
+            </li>
+            <li>
+              <b>(4) Physics-based Dynamics</b>: Understanding of physical events like collisions, throwing, fluid dynamics, explosions, and similar phenomena.
+            </li>
+          </ul>
 
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/our_new_3_datasets.png" alt="algebraic reasoning" width="80%"/>
-                <p> Examples of our newly annotated datasets: IQTest, FunctionQA, and PaperQA.</p>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/part1/related.png" alt="arithmetic reasoning" width="70%"/>
-                <br>
-                A comparison between <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                  <span class="mathvista">PhysBench</span>. and other physical understanding question-answering benchmarks reveals that
-                <br><img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                  <span class="mathvista">PhysBench</span> is a comprehensive dataset, covering a wide range of tasks related to physical world understanding.
-
-              </div>
-            </div>
+          <div class="content has-text-centered">
+            <img src="static/images/part1/data_cases_full.png" alt="algebraic reasoning" width="80%"/>
+            <p>Sampled PhysBench examples from four major dimensions</p>
+            <br>
           </div>
 
+          <div class="content has-text-centered">
+            <img src="static/images/part1/related.png" alt="arithmetic reasoning" width="80%"/>
+            <br>
+            A comparison between <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">PhysBench</span>. and other physical understanding question-answering benchmarks reveals that
+            <br><img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">PhysBench</span> is a comprehensive dataset, covering a wide range of tasks related to physical world understanding.
+
+          </div>
+
+
+
           <p>
-            All the data examples were divided into two subsets: testmini and test. 
-            <!-- @PAN TODO: add download links -->
+            The complete <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">PhysBench</span> dataset consists of 100,000 entries, organized into 19 subclasses and 10 distinct capability dimensions.
+For convenience, we selected a subset of 10,002 entries, which are more challenging and diverse, as the test set, and 200 entries as the validation set for parameter choosing.
             <ul>
-              <li><b>testmini</b>: 1,000 examples used for model development, validation, or for those with limited computing resources.</li>
-              <li><b>test</b>: 5,141 examples for standard evaluation. Notably,
+              <li><b>val</b>: 200 examples used for model development, validation, or for those with limited computing resources.</li>
+              <li><b>test</b>: 10,002 examples for standard evaluation (include val). Notably,
                 the answer labels for test will NOT be publicly released.</li>
+              <li><b>train</b>: The remaining 89,998 examples.</li>
             </ul>
             You can download the dataset on <a href="https://huggingface.co/datasets/AI4Math/MathVista" target="_blank">Hugging Face Dataset</a>.
           </p>
@@ -315,7 +321,7 @@ video frames into a single image
 <div class="columns is-centered">
   <div class="column">
     <div class="content has-text-centered">
-      <img src="static/images/part1/stat.png" alt="data-overview" style="max-width: 80%;"/>
+      <img src="static/images/part1/stat.png" alt="data-overview" style="max-width: 75%;"/>
       <p>
         Key statistics of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
         <span class="mathvista">PhysBench</span>.<br/>
@@ -326,88 +332,35 @@ video frames into a single image
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Examples</h2>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/examples/ari.png" alt="arithmetic reasoning" width="60%"/>
-              <p>Arithmetic Reasoning</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/examples/alg.png" alt="algebraic reasoning" width="60%"/>
-              <p>Algebraic Reasoning</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/examples/geo.png" alt="geometric reasoning" width="60%"/>
-              <p>Geometric Reasoning</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/examples/log.png" alt="logical reasoning" width="60%"/>
-              <p>Logical Reasoning</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/examples/num.png" alt="numeric reasoning" width="60%"/>
-              <p>Numeric Reasoning</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/examples/sta.png" alt="statistical reasoning" width="60%"/>
-              <p>Statistical Reasoning</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/examples/sci.png" alt="scientific reasoning" width="60%"/>
-              <p>Scientific Reasoning</p>
-            </div>
-          </div>
-
-          
-        </div>
-
-      </div>
-    </div>
-    <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
         <h2 class="title is-3">Statistics</h2>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/statistics/qs-len.png" alt="qs-len" class="stats-image"/>
-              <p>Distribution of the number of words per question in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">PhysBench</span>. 
+              <img src="static/images/part1/stat1.png" alt="qs-len" class="stats-image"/>
+              <p>
+                The distribution of the number of words per question in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span>.
+                <br> Questions with a length greater than 48 are categorized as 47 for visualization simplicity.
                 <!-- Questions with a length greater than 60 are categorized as 61 for visualization simplicity -->
               </p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/statistics/reasoning.png" alt="reasoning" class="stats-image"/>
-              <p>Portion of each mathematical reasoning type involved in the problems of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">PhysBench</span></p>
+              <img src="static/images/part1/stat2.png" alt="reasoning" class="stats-image"/>
+              <p>The distribution of the number of words per question in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">PhysBench</span>.
+                <br>
+                Options with a length greater than 20 are categorized as 20 for visualization simplicity.
+                </p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/statistics/reasoning-count.png" alt="reasoning-count" class="stats-image"/>
-              <p>Distribution of the number of mathematical reasoning types within <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">PhysBench</span></p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/statistics/task-type.png" alt="task-type" class="stats-image"/>
-              <p>Task type distribution of problems within <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">PhysBench</span></p>
+              <img src="static/images/part1/stat3.png" alt="reasoning-count" class="stats-image"/>
+              <p>The distribution charts for image and video resolution, as well as video frame counts.
+                <br>From left to right: the distribution of image resolution, <br>the distribution of video resolution, and the distribution of video frame counts.
+              </p>
             </div>
           </div>
         </div>
@@ -422,38 +375,31 @@ video frames into a single image
     <h3 class="title is-3 mathvista">Can VLMs Understand the Physical World?</h3>
   </div>
 </section>
+
 <section class="section">
   <div class="container">
-
-    <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
-        We xxx
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/question1/cor.png" alt="grade-lv" width="80%"/>
-              <p>
-                (a) Correlation map between 4 tasks in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">PhysBench</span>. and 15 other vision-language benchmarks.
-                <br>
-                (b) The visualization of model performance across 19 sub-tasks is presented, where different colors represent the respective categories.
-                <br>
-                The four colors, from left to right, represent physical object properties, physical object relationships, physical scenes, and physical-driven dynamics.
-              </p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/results-figures/bard_error.png" alt="grade-lv" width="70%"/>
-              <p>
-                Error analysis of Bard results: (a) presents errors in answers and explanations; <br>
-                (b) delves into the details of wrong explanations. <br>
-                Notations: “Answer” is “Ans.”, “Explanation” is “Exp.”, “Partially Correct” is “Partial”, <br>
-                and “Not applicable” refers to unanswerable or indeterminate cases.</p>
-            </div>
-          </div>
-        </div>
+    <!-- For words!-->
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+                <p>
+            To assess whether VLMs can understand the physical world, we evaluated 39 representative VLMs on <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                  <span class="mathvista">PhysBench</span> and found that:
+          </p>
+          <ul>
+            <li><b>VLMs exhibit limited understanding of the physical world</b>.</li>
+            <li><b>Closed-source models generally perform better</b>.</li>
+          </ul>
       </div>
+    </div>
+
+    <br>
+    <div class="content has-text-centered">
+      <img src="static/images/question1/cor.png" alt="grade-lv" width="80%"/>
+      <p>
+        The visualization of model performance across 19 sub-tasks is presented, where different colors represent the respective categories.
+        <br>
+        The four colors, from left to right, represent physical object properties, physical object relationships, physical scenes, and physical-based dynamics.
+      </p>
     </div>
   </div>
 </section>
@@ -466,33 +412,95 @@ video frames into a single image
 </section>
 <section class="section">
   <div class="container">
-
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+                <p>
+            To assess whether VLMs can understand the physical world, we evaluated 39 representative VLMs on <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                  <span class="mathvista">PhysBench</span> and found that:
+          </p>
+          <ul>
+            <li><b>Physical world understanding differs significantly from common VQA tasks</b>. We established a correlation map with the common VQA benchmark. Our analysis identifies a notable distinction between PhysBench and traditional VLM benchmarks, with PhysBench demonstrating a closer alignment with MMMU, which necessitates complex reasoning and diverging from the majority of other benchmarks.</li>
+            <li><b>VLMs's physical world understanding ability does not scale with model size, data, or frames</b>.While keeping the data size constant, increasing the model size or, alternatively, increasing the data size while keeping the model size unchanged, led to inconsistent results. Similarly, increasing the number of frames also yielded unstable outcomes.</li>
+          </ul>
+      </div>
+    </div>
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        We xxx
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/question2/data.png" alt="grade-lv" width="60%"/>
-              <p>Accuracy scores of primary baselines on the testmini subset (1,000 examples) of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">PhysBench</span>.
-                <br>
-                Both CoT GPT-4 and PoT GPT-4 are augmented with Bard captions and OCR text.</p>
+              <img src="static/images/question2/cor.png" alt="grade-lv" width="60%"/>
+              <p>Correlation map between 4 tasks in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+        <span class="mathvista">PhysBench</span>. and 15 other vision-language benchmarks.</p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/results-figures/bard_error.png" alt="grade-lv" width="70%"/>
-              <p>
-                Error analysis of Bard results: (a) presents errors in answers and explanations; <br>
-                (b) delves into the details of wrong explanations. <br>
-                Notations: “Answer” is “Ans.”, “Explanation” is “Exp.”, “Partially Correct” is “Partial”, <br>
-                and “Not applicable” refers to unanswerable or indeterminate cases.</p>
+              <img src="static/images/question2/model.png" alt="grade-lv" width="60%"/>
+              <p>Model Size Scalability.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/question2/data.png" alt="grade-lv" width="60%"/>
+              <p>Data Scalability.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/question2/frame.png" alt="grade-lv" width="60%"/>
+              <p>Frame Scalability.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          We were perplexed by the fact that increasing the amount of training data did not improve the VLM's understanding of the physical world.
+          To investigate further, we examined the training datasets of LLaVA-1.5, VILA-1.5, and PLLaVA-1.5 and identified a lack of physical world knowledge in these datasets.
+          Additionally, keywords frequently encountered in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                  <span class="mathvista">PhysBench</span> are notably rare in the training data of these model.
+          <b>This deficiency in relevant data likely contributes to the VLM's poor comprehension of physical world concepts</b>.
+          We further support this hypothesis by analyzing the error distribution and fine-tuning the VLM in subsequent experiments.
+          </p>
+      </div>
+    </div>
+
+        <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/question2/word1.png" alt="grade-lv" width="80%"/>
+              <p>Correlation map between 4 tasks in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+        <span class="mathvista">PhysBench</span>. and 15 other vision-language benchmarks.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/question2/model.png" alt="grade-lv" width="60%"/>
+              <p>Model Size Scalability.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/question2/data.png" alt="grade-lv" width="60%"/>
+              <p>Data Scalability.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/question2/frame.png" alt="grade-lv" width="60%"/>
+              <p>Frame Scalability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -609,11 +617,11 @@ video frames into a single image
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>
-            This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+<p style="font-size: 14px;">
+  This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+                                              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+  Commons Attribution-ShareAlike 4.0 International License</a>.
+</p>
         </div>
       </div>
     </div>
