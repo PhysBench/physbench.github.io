@@ -475,32 +475,77 @@ For convenience, we selected a subset of 10,002 entries, which are more challeng
           <div class="box m-5">
             <div class="content has-text-centered">
               <img src="static/images/question2/word1.png" alt="grade-lv" width="80%"/>
-              <p>Correlation map between 4 tasks in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-        <span class="mathvista">PhysBench</span>. and 15 other vision-language benchmarks.</p>
+              <p>Word Statics and Word Cloud for <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+        <span class="mathvista">PhysBench</span>.</p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/question2/model.png" alt="grade-lv" width="60%"/>
-              <p>Model Size Scalability.</p>
+              <img src="static/images/question2/word2.png" alt="grade-lv" width="80%"/>
+              <p>Word Statics and Word Cloud for LLaVA-1.5-13B Training Data.</p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/question2/data.png" alt="grade-lv" width="60%"/>
-              <p>Data Scalability.</p>
+              <img src="static/images/question2/word3.png" alt="grade-lv" width="80%"/>
+              <p>Word Statics and Word Cloud for VILA-1.5-13B Training Data.</p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/question2/frame.png" alt="grade-lv" width="60%"/>
-              <p>Frame Scalability.</p>
+              <img src="static/images/question2/word4.png" alt="grade-lv" width="80%"/>
+              <p>Word Statics and Word Cloud for PLLaVA-13B Training Data.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/question2/word5.png" alt="grade-lv" width="80%"/>
+              <p>The frequency of common terms in <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+        <span class="mathvista">PhysBench</span> within the training data of the LLaVA-1.5-13B, VILA-1.5-13B, and PLLaVA-13B models.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          To investigate the poor performance of VLMs on <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+        <span class="mathvista">PhysBench</span>, we randomly selected 500 questions and obtained explanations from
+          three models—GPT-4o, Phi-3V, and Gemini-1.5-flash. Expert annotators classified the root causes
+          of the mispredictions into six categories: perception errors, reasoning errors, lack of knowledge,
+          refusal to answer, failure to follow instructions, and annotation errors in the dataset.
+          We find that <b>perceptual and knowledge gaps constitute the majority of errors</b>.
+        </p>
+      </div>
+    </div>
+    <br>
+    <div class="content has-text-centered">
+      <img src="static/images/question2/error.png" alt="grade-lv" width="70%"/>
+      <p>Distribution of error types for GPT-4V, Gemini-1.5-flash, Phi-3V.</p>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          Our error analysis revealed that inadequate physical
+          world knowledge and reasoning capabilities were key contributors to the models’ poor performance.
+          To investigate whether introducing additional examples could enhance performance, we
+          conducted tests on 200 entries of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+        <span class="mathvista">PhysBench</span>, pairing each with a similar example. These additional
+          examples were incorporated through fine-tuning or in-context learning. As shown in the below figure,
+          the performance improvements after adding physical world knowledge examples indicate that VLMs
+          can transfer physical knowledge to some extent. This suggests that the original data’s lack of physical
+          world knowledge was a significant factor in the models’ suboptimal performance.
+        </p>
+      </div>
+    </div>
+    <div class="content has-text-centered">
+      <img src="static/images/question2/transfer.png" alt="grade-lv" width="50%"/>
+      <p>Physics knowledge transfer study.</p>
+    </div>
   </div>
 </section>
 
@@ -512,32 +557,46 @@ For convenience, we selected a subset of 10,002 entries, which are more challeng
 </section>
 <section class="section">
   <div class="container">
-
-    <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
-        We xxx
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/question3/physagent.png" alt="grade-lv" width="60%"/>
-              <p>Accuracy scores of primary baselines on the testmini subset (1,000 examples) of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">PhysBench</span>.
-                <br>
-                Both CoT GPT-4 and PoT GPT-4 are augmented with Bard captions and OCR text.</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/results-figures/bard_error.png" alt="grade-lv" width="70%"/>
-              <p>
-                Error analysis of Bard results: (a) presents errors in answers and explanations; <br>
-                (b) delves into the details of wrong explanations. <br>
-                Notations: “Answer” is “Ans.”, “Explanation” is “Exp.”, “Partially Correct” is “Partial”, <br>
-                and “Not applicable” refers to unanswerable or indeterminate cases.</p>
-            </div>
-          </div>
-        </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          Recognizing perceptual inaccuracies and knowledge gaps as key sources of error, we introduce <b>PhysAgent</b> to improve VLMs' understanding of the physical world by integrating expert models for enhanced perception and incorporating memory for physical knowledge.
+        </p>
       </div>
+    </div>
+    <br>
+    <div class="content has-text-centered">
+      <img src="static/images/question3/physagent.png" alt="grade-lv" width="80%"/>
+      <p>Architecture of PhysAgent.</p>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          The results lead to the following conclusions:
+          <br>
+          <b>(1) Prompting methods is unstable, and using pure language yields catastrophic results</b>.
+          As observed, the CoT strategy has minimal impact, while both Desp-CoT and PLR show a decline in performance.
+          This suggests that descriptive prompts are not particularly effective for addressing the questions,
+          implying that our dataset requires a deeper understanding of the videos or images to answer accurately.
+          <br>
+          <b>(2) ContPhy even worsens performance</b>.
+          In three out of four tasks, ContPhy underperforms compared to its base model,
+          GPT-4o, due to suboptimal module invocation and limited flexibility in its logical templates,
+          which struggle to adapt to diverse scenarios. Additionally, ContPhy relies on models
+          like RCNN to process visual information instead of directly leveraging GPT-4o,
+          leading to potential information loss and subsequent performance degradation.
+          <br>
+          <b>(3) PhysAgent consistently improves zero-shot performance</b>, notably achieving a 36.5% improvement
+          for GPT-4o in spatial tasks. Compared to the CoT, Desp-CoT, and PLR prompting strategies,
+          our method demonstrates clear advantages.
+        </p>
+      </div>
+    </div>
+    <br>
+    <div class="content has-text-centered">
+      <img src="static/images/question3/exp.png" alt="grade-lv" width="30%"/>
+      <p>Performance of different methods.</p>
     </div>
   </div>
 </section>
@@ -551,58 +610,66 @@ For convenience, we selected a subset of 10,002 entries, which are more challeng
 </section>
 <section class="section">
   <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          we conducted five embodied agent tasks to verify <b>enhancing VLMs' physical understanding facilitates the deployment of embodied agents</b>.
+          </p>
+      </div>
+    </div>
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        We xxx
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/question4/moka.png" alt="grade-lv" width="60%"/>
-              <p>Accuracy scores of primary baselines on the testmini subset (1,000 examples) of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">PhysBench</span>.
-                <br>
-                Both CoT GPT-4 and PoT GPT-4 are augmented with Bard captions and OCR text.</p>
+              <img src="static/images/question4/task.png" alt="grade-lv" width="60%"/>
+              <p>Description of each of the testing tasks.</p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/results-figures/bard_error.png" alt="grade-lv" width="70%"/>
-              <p>
-                Error analysis of Bard results: (a) presents errors in answers and explanations; <br>
-                (b) delves into the details of wrong explanations. <br>
-                Notations: “Answer” is “Ans.”, “Explanation” is “Exp.”, “Partially Correct” is “Partial”, <br>
-                and “Not applicable” refers to unanswerable or indeterminate cases.</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/results-figures/grade-lv.png" alt="grade-lv" width="90%"/>
-              <p>Average accuracy scores across different grade levels for leading foundation models</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/results-figures/contexts.png" alt="contexts" width="90%"/>
-              <p>Accuracy scores of leading baselines across various visual contexts</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/results-figures/ablation.png" alt="geometric reasoning" width="90%"/>
-              <p>Average accuracy scores of LLM baselines under various visual inputs</p>
+              <img src="static/images/question4/moka_s.png" alt="grade-lv" width="80%"/>
+              <p>Marked observation, predicted affordances
+                and motion in MOKA. MOKA leverages a VLM to generate motions based on a point-based
+                affordance representation.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          we observe consistent improvements after fine-tuning with a subset of <img src="static/images/physbench.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+        <span class="mathvista">PhysBench</span>,
+          indicating that the benchmark's data is of high quality and suitable for use as demonstration data in
+          open-world robotics tasks. Additionally,
+          PhysAgent consistently yields stable zero-shot gains across all five tasks,
+          with especially significant progress observed in the force task.
+          While the improvements are less pronounced compared to direct fine-tuning.
+        </p>
+      </div>
+    </div>
+    <br>
+    <div class="content has-text-centered">
+      <img src="static/images/question4/exp.png" alt="grade-lv" width="40%"/>
+      <p>Performance on 5 embodied tasks shown in the former figure.
+        <br>The color blocks from left to right represent success, VLM reasoning error, and execution error, respectively.</p>
+    </div>
+
   </div>
 </section>
+
+
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
-    <pre><code>@inproceedings{lu2024mathvista,
+    <pre><code>
+      @inproceedings{lu2024mathvista,
   author    = {Lu, Pan and Bansal, Hritik and Xia, Tony and Liu, Jiacheng and Li, Chunyuan and Hajishirzi, Hannaneh and Cheng, Hao and Chang, Kai-Wei and Galley, Michel and Gao, Jianfeng},
   title     = {MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts},
   booktitle={International Conference on Learning Representations (ICLR)},
